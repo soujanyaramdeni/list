@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <style>
+      .clock {
+  border-radius: 50%;
+  background: #839b56 url(/images/posts/clocks/ios_clock.svg) no-repeat center padding-box;
+  background-size: 100%;
+  height: 10px;
+  padding-bottom: 31%;
+  position: relative;
+  width: 25em;
+}
+
+.clock.simple:after {
+  background: #fd0303;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
+}
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.hours {
+  background: #000000;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 3.5%;
+}
+.minutes {
+  background: #fa0404;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 1.5%;
+}
+.seconds {
+  background: #0f02f8;
+  height: 45%;
+  left: 49.5%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 8;
+}
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.hours-container {
+  animation: rotate 43200s infinite linear;
+}
+.minutes-container {
+  animation: rotate 3600s infinite linear;
+}
+.seconds-container {
+  animation: rotate 60s infinite linear;
+}
+.minutes-container {
+  animation: rotate 3600s infinite steps(60);
+}
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
+}
+    </style>
+  </head>
+  <body>
+   
+    <article class="clock">
+      <div class="hours-container;"><p style="margin-top: 10px; margin-left: 190px; font-size: 40px;">12</div>
+  <br><br><br><br><br><br>
+        <span style="margin-top: 220px; margin-left:10px; font-size: 40px;;">9</span>
+        <span style="margin-left: 340px; font-size: 40px; margin-top: 200px;">3</span>
+        <p style="margin-top: 170px; margin-left: 190px; font-size: 40px;">6</p>
+        <div class="hours"></div>
+      </div>
+      <div class="minutes-container">
+        <div class="minutes"></div>
+      </div>
+      <div class="seconds-container">
+        <div class="seconds"></div>
+      </div>
+    </article>
+  </body>
+</html>
